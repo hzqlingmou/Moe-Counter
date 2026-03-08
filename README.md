@@ -1,6 +1,6 @@
-# *Moe Counter!*
+# *Moe Counter-Vercel!*
 
-多种风格可选的萌萌计数器
+多种风格可选的萌萌计数器（vercel+mongodb专供版）
 
 <p align="center">
   <a href="https://count.getloli.com" target="_blank">
@@ -246,50 +246,6 @@ For information on counter usage and configuration, refer to the [demo website](
 
 ## Usage
 
-### Using Docker (Recommended)
-
-Pull the pre-built image from GitHub Container Registry:
-
-```shell
-$ docker pull ghcr.io/journey-ad/moe-counter:latest
-```
-
-Run with Docker:
-
-```shell
-$ docker run -d -p 3000:3000 \
-  -v $(pwd)/data:/app/data \
-  -e APP_PORT=3000 \
-  -e DB_TYPE=sqlite \
-  ghcr.io/journey-ad/moe-counter:latest
-```
-
-Or use docker-compose:
-
-```yaml
-version: '3'
-services:
-  moe-counter:
-    image: ghcr.io/journey-ad/moe-counter:latest
-    ports:
-      - "3000:3000"
-    volumes:
-      - ./data:/app/data
-    environment:
-      - APP_PORT=3000
-      - DB_TYPE=sqlite
-```
-
-### Deploying from Source
-
-```shell
-$ git clone https://github.com/journey-ad/Moe-Counter.git
-$ cd Moe-Counter
-$ pnpm install
-
-$ pnpm start
-```
-
 ### Configuration
 
 Set `.env` file to specify the environment variables. *[.env.example](./.env.example)*
@@ -300,9 +256,6 @@ Set `.env` file to specify the environment variables. *[.env.example](./.env.exa
 
 # Application port
 APP_PORT=3000
-
-# Database type: either 'sqlite' or 'mongodb'
-DB_TYPE=sqlite
 
 # If using MongoDB, provide the connection string
 # DB_URL=mongodb://127.0.0.1:27017
