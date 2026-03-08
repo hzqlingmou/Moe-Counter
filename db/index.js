@@ -11,17 +11,22 @@ const schema = new mongoose.Schema(
   { collection: 'tb_count', versionKey: false }
 );
 
-// the default mongodb url (local server)
-const mongodbURL = process.env.DB_URL || "mongodb://127.0.0.1:27017/db_count";
+const mongodbURL = process.env.DB_URL || false;
+
+if (!mongodbURL) {
+  logger.error("DB_URL is not set");
+  process.exit(1);
+}
+
 mongoose.connect(mongodbURL, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
 .then(() => {
-    logger.info("连接mongo数据库成功")
+  logger.info("连接 mongo 数据库成功")
 })
 .catch((error) => {
-    logger.error("连接mongo数据库失败:" + error.message)
+  logger.error("连接 mongo 数据库失败:" + error.message)
 })
 
 const Count = mongoose.connection.model("Count", schema);
@@ -57,11 +62,9 @@ function setNumMulti(counters) {
   return Count.bulkWrite(bulkOps, { ordered: false });
 }
 
-let  db = {
+module.exports = {
   getNum,
   getAll,
   setNum,
   setNumMulti,
 };
-
-module.exports = db

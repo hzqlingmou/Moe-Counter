@@ -6,28 +6,28 @@
     }
   },
   "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
         {
-            "source": "/assets/favicon.png",
-            "headers": [
-                {
-                    "key": "Cache-Control",
-                    "value": "public, max-age=2592000"
-                },
-                {
-                    "key": "Access-Control-Allow-Origin",
-                    "value": "*"
-                },
-                {
-                    "key": "Access-Control-Allow-Headers",
-                    "value": "content-type"
-                },
-                {
-                    "key": "Access-Control-Allow-Methods",
-                    "value": "DELETE,PUT,POST,GET,OPTIONS"
-                }
-            ]
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "content-type"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "DELETE,PUT,POST,GET,OPTIONS"
         }
-    ],
+      ]
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",

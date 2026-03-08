@@ -43,7 +43,7 @@ app.get(["/@:name", "/get/@:name"],
       darkmode: z.enum(["0", "1", "auto"]).default("auto"),
 
       // Unusual Options
-      num: z.coerce.number().int().min(0).max(1e15).default(0), // a carry-safe integer, less than `2^53-1`, and aesthetically pleasing in decimal.
+      num: z.coerce.number().int().min(0).max(1e15).default(0),
       prefix: z.coerce.number().int().min(-1).max(999999).default(-1)
     })
   }),
@@ -160,3 +160,5 @@ async function getCountByName(name, num) {
     return defaultCount;
   }
 }
+
+module.exports = app;
