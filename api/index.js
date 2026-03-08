@@ -5,10 +5,10 @@ const express = require("express");
 const compression = require("compression");
 const { z } = require("zod");
 
-const db = require("./db");
-const { themeList, getCountImage } = require("./utils/themify");
-const { cors, ZodValid } = require("./utils/middleware");
-const { randomArray, logger } = require("./utils");
+const db = require("../db");
+const { themeList, getCountImage } = require("../utils/themify");
+const { cors, ZodValid } = require("../utils/middleware");
+const { randomArray, logger } = require("../utils");
 
 const app = express();
 

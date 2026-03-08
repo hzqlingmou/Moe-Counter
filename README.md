@@ -1,6 +1,7 @@
 # *Moe Counter-Vercel!*
 
 多种风格可选的萌萌计数器（vercel+mongodb专供版）
+Made for Vercel deployment
 
 <p align="center">
   <a href="https://count.getloli.com" target="_blank">
@@ -245,6 +246,10 @@
 For information on counter usage and configuration, refer to the [demo website](https://count.getloli.com).
 
 ## Usage
+
+### Deploy
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fhzqlingmou%2FMoe-Counter&env=DB_URL,DB_INTERVAL,LOG_LEVEL&envDefaults=%7B%22DB_URL%22%3A%22mongodb%2Bsrv%3A%2F%2Faccount%3Apasswd%40***.***.***.mongodb.net%2Fdb_count%22%2C%22DB_INTERVAL%22%3A%2260%22%2C%22LOG_LEVEL%22%3A%22debug%22%7D&envDescription=Environment%20Variables%20neede%20for%20this%20application&envLink=https%3A%2F%2Fgithub.com%2Fhzqlingmou%2FMoe-Counter%2Fblob%2Fmaster%2F.env.example&project-name=moe-counter-vercel&repository-name=moe-counter-vercel)
 
 ### Configuration
 
