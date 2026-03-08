@@ -247,33 +247,29 @@ For information on counter usage and configuration, refer to the [demo website](
 
 ## Usage
 
+### Get A MongoDB Account
+
+**MongoDB login**: [mongodb](https://cloud.mongodb.com)
+
 ### Deploy
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fhzqlingmou%2FMoe-Counter&env=DB_URL,DB_INTERVAL,LOG_LEVEL&envDefaults=%7B%22DB_URL%22%3A%22mongodb%2Bsrv%3A%2F%2Faccount%3Apasswd%40***.***.***.mongodb.net%2Fdb_count%22%2C%22DB_INTERVAL%22%3A%2260%22%2C%22LOG_LEVEL%22%3A%22debug%22%7D&envDescription=Environment%20Variables%20neede%20for%20this%20application&envLink=https%3A%2F%2Fgithub.com%2Fhzqlingmou%2FMoe-Counter%2Fblob%2Fmaster%2F.env.example&project-name=moe-counter-vercel&repository-name=moe-counter-vercel)
 
 ### Configuration
 
-Set `.env` file to specify the environment variables. *[.env.example](./.env.example)*
+Environment variable example： *[.env.example](./.env.example)*
 
-```dosini
-# Specify your website URL
-# APP_SITE=https://count.getloli.com
+| Variable | Description | Default | Example |
+|----------|-------------|---------|---------|
+| `DB_URL` | MongoDB connection string | `mongodb+srv://account:passwd@***.***.***.mongodb.net/<db_name>` | `mongodb+srv://account:passwd@***.***.***.mongodb.net/<db_name>` |
+| `DB_INTERVAL` | Database write interval (seconds) | `0` | `60` (0 for real-time) |
+| `LOG_LEVEL` | Log level | `info` | `debug` \| `info` \| `warn` \| `error` \| `none` |
+| `GA_ID` | Google Analytics G-Tag ID | - | `G-XXXX` |
 
-# Application port
-APP_PORT=3000
+### TIPS
 
-# If using MongoDB, provide the connection string
-# DB_URL=mongodb://127.0.0.1:27017
-
-# Database write interval in seconds (0 for real-time)
-DB_INTERVAL=60
-
-# Log level: either 'debug' | 'info' | 'warn' | 'error' | 'none'
-LOG_LEVEL=debug
-
-# Google Analytics `G-Tag` ID
-# GA_ID=G-XXXX
-```
+1. `<db_name>` the name of the database, such as `db_count`, is required to store the counter data.
+2. For vercel deployment, the `DB_INTERVAL` must be `0`.
 
 ## Credits
 
@@ -286,13 +282,3 @@ LOG_LEVEL=debug
 ## License
 
 [MIT License](./LICENSE), excluding all themes
-
----
-
-<a href="https://star-history.com/?repos=journey-ad/Moe-Counter&type=Date#journey-ad/Moe-Counter&Date">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=journey-ad/Moe-Counter&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=journey-ad/Moe-Counter&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=journey-ad/Moe-Counter&type=Date" />
- </picture>
-</a>
